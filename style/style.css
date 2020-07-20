@@ -217,15 +217,28 @@ ul li {
 .program__column {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 0 200px 400px;
   width: 630px;
 }
 .program__item {
   padding: 30px 76px;
   border-left: 1px solid #70e2ff;
-  border-bottom: 1px solid rgba(112, 226, 255, 0.2);
-  border-top: 1px solid rgba(112, 226, 255, 0.2);
+  /* border-bottom: 1px solid rgba(112, 226, 255, 0.2);
+  border-top: 1px solid rgba(112, 226, 255, 0.2); */
 }
+.program__item:before {
+  display: inline-block;
+  content: "";
+  width: 890px;
+  height: 1px;
+  background-color: rgba(112, 226, 255, 0.2);
+  z-index: 10;
+  position: relative;
+  right: 120px;
+  bottom: 30px;
+  /* margin-left: -52.5px; */
+}
+
 .program__subtitle {
   font-weight: 800;
   font-size: 24px;
@@ -236,6 +249,7 @@ ul li {
 .speakers {
   width: 1100px;
   margin: 200px auto;
+  position: relative;
 }
 .speakers__img {
   box-shadow: 0px 0px 30px rgba(112, 226, 255, 0.27);
@@ -260,12 +274,18 @@ ul li {
   font-size: 16px;
   line-height: 120%;
 }
+.speakers__el {
+  position: absolute;
+  left: -110px;
+  bottom: -150px;
+  z-index: -1;
+}
 
 /* Emailing */
 
 .contact__box {
   max-width: 733px;
-  margin: 140px 243px 200px;
+  margin: 140px 243px 300px;
   padding: 40px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(30px);
@@ -287,6 +307,21 @@ ul li {
 }
 
 /* Last year */
+.lastyear {
+  position: relative;
+}
+.lastyear__el {
+  position: absolute;
+  left: 170px;
+  top: -120px;
+}
+.lastyear__image {
+  position: absolute;
+  width: 832.27px;
+  height: 715px;
+  right: -250px;
+  top: -80px;
+}
 .lastyear__tab {
   margin-left: 120px;
   width: 790px;
@@ -305,7 +340,7 @@ ul li {
 
 /* Organizer */
 .organizer {
-  margin: 175px auto 175px 120px;
+  margin: 375px auto 175px 120px;
 }
 .organizer__title {
   margin: 0 auto 60px 0px;
