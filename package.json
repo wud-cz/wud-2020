@@ -1,0 +1,15 @@
+{
+  "name": "wud-2020",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:wud-cz/wud-2020-new.git",
+  "author": "Filip Jirsák <filip@jirsak.org>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "sass": "^1.26.10"
+  }
+}
