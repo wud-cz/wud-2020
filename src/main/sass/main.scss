@@ -1,0 +1,334 @@
+$color-blue: #0000D6;
+$color-dark-blue: #0B132B;
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  line-height: 120%;
+  color: white;
+  background-color: $color-dark-blue;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  width: 1440px;
+  background: url('/image/background/top.svg') no-repeat, center top / 1440px 943px linear-gradient(174.93deg, #3A506B 2.1%, rgba(11, 19, 43, 0) 89.02%) no-repeat;
+}
+
+nav > ul {
+  height: 60px;
+  //background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 40px;
+
+  & > li {
+    margin-left: 38px;
+    list-style: none;
+  }
+
+  a {
+    color: white;
+    //color: #0B132B;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  margin: 100px 0 0 0;
+  padding: 0 121px;
+
+  &.half {
+    display: flex;
+    justify-content: space-between;
+
+    & > * {
+      flex-grow: 1;
+      flex-basis: 50%;
+    }
+  }
+}
+
+h1, h2, h3 {
+  line-height: 120%;
+  font-weight: bold;
+  margin: 0;
+}
+
+h2, h3 {
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+h1 {
+  font-size: 72px;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 64px;
+  margin-bottom: 24px;
+
+  section > & {
+    text-align: center;
+  }
+}
+
+h3 {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+
+p {
+  font-size: 16px;
+  line-height: 160%;
+  text-align: justify;
+
+  section > & {
+    margin: 0 243px;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: center;
+  }
+}
+
+.milk-glass, #themes > .content > div {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+
+  section > & {
+    padding: 100px;
+    margin-left: 121px;
+    width: 789px;
+
+    > h2 {
+      width: 1098px;
+    }
+  }
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 60px;
+  grid-row-gap: 30px;
+}
+
+.button, button {
+  display: inline-flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: $color-blue;
+  width: 195px;
+  height: 48px;
+}
+
+a.button {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  color: $color-dark-blue;
+  background-color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 14px 46px;
+  margin: 0 21px;
+  cursor: pointer;
+}
+
+
+#top {
+  height: 680px;
+  padding: 0;
+  margin: 0;
+  background: url('/image/brain.svg') no-repeat, url('/image/brain.png') no-repeat;
+  align-items: center;
+
+  .location {
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 900;
+    padding-left: 304px;
+    padding-top: 320px;
+  }
+
+  p {
+    width: 470px;
+  }
+}
+
+#about {
+  height: 715px;
+  padding: 110px 0 130px 0;
+  background: 37px bottom url('/image/aside/about.svg') no-repeat,
+  720px 30px url('/image/wud.jpg') no-repeat,
+  50px 0  / 900px url('/image/background/wud.svg') no-repeat;
+
+  h2 {
+    letter-spacing: 2px;
+  }
+}
+
+#call-for-papers {
+  background: right 37px bottom url('/image/aside/call-for-papers.svg') no-repeat;
+
+  > .milk-glass {
+    width: 733px;
+    margin-left: 146px;
+    padding: 40px;
+  }
+
+  h2 {
+    letter-spacing: 2.5px;
+  }
+}
+
+#themes {
+  background: right 37px bottom url('/image/aside/themes.svg') no-repeat;
+
+  .content {
+    margin-top: 60px;
+
+    & > div {
+      padding: 40px;
+    }
+  }
+}
+
+#wud-2019 {
+  height: 715px;
+  padding: 110px 0 130px 0;
+  background: 37px bottom url('/image/aside/wud-2019.svg') no-repeat,
+  720px 30px url('/image/wud-2019.jpg') no-repeat,
+  25px 0 / 700px url('/image/background/2019.svg') no-repeat;
+}
+
+#organizers {
+  background: right 37px bottom url('/image/aside/organizatori.svg') no-repeat;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+
+    > figure {
+      margin: 0;
+
+      > img {
+        width: 160px;
+        height: 160px;
+        border-radius: 10px;
+        filter: grayscale(1) drop-shadow(0px 0px 30px rgba(112, 226, 255, 0.27));
+      }
+    }
+  }
+}
+
+#contact {
+  display: flex;
+  background: rgba(1, 1, 214, 0.6);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  padding: 100px 120px;
+  margin-bottom: 12px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .social-media {
+    flex-grow: 1;
+    align-self: flex-end;
+
+    svg {
+      margin-right: 24px;
+
+      circle {
+        fill: #505050;
+
+        &:hover {
+          fill: #707070;
+        }
+      }
+
+      path {
+        fill: white;
+      }
+    }
+
+    > div {
+      margin-top: 12px;
+    }
+
+    .e-mail {
+      margin-top: 24px;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .contact-form {
+    padding: 40px;
+
+    input {
+      font-size: 14px;
+      line-height: 20px;
+      border: 1px solid white;
+      border-radius: 10px;
+      width: 405px;
+      height: 48px;
+      padding: 14px 20px;
+      background: none;
+      color: rgba(255, 255, 255, 0.6);
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+footer {
+  font-size: 12px;
+  width: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}

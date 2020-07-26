@@ -1,0 +1,27 @@
+plugins {
+    id 'io.miret.etienne.sass' version '1.1.1'
+}
+
+compileSass {
+    outputDir = project.file("${buildDir}/style")
+    sourceDir = project.file("src/main/sass")
+    style = compressed
+}
+
+task clean(type: Delete, group: 'build') {
+    delete buildDir
+}
+
+task html(type: Copy, group: 'build') {
+    from "$projectDir/src/main/html"
+    into "$buildDir"
+}
+
+task image(type: Copy, group: 'build') {
+    from "$projectDir/src/main/image"
+    into "$buildDir/image"
+}
+
+task style(group: 'build', dependsOn: 'compileSass')
+
+task build(group: 'build', dependsOn: [html, image, style])
