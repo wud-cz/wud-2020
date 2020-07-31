@@ -211,9 +211,11 @@ form {
     border-radius: 10px;
     background: none;
     color: #A0A0A0;
+
     &::placeholder {
       color: #909090;
     }
+
     @include for-tablet-up {
       width: 405px;
     }
@@ -605,5 +607,18 @@ footer {
   .md-center {
     display: flex;
     justify-content: center;
+  }
+}
+
+.glow {
+  animation: 0.2s linear 0s 2 normal glow;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0);
+  }
+  to {
+    box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.5);
   }
 }
