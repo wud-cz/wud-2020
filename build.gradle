@@ -29,6 +29,6 @@ task build(group: 'build', dependsOn: [html, image, style])
 task publish(type: Exec, group: 'publish', dependsOn: build) {
     executable 'pscp'
     args '-r'
-    args "$buildDir"
-    args 'filip@barbucha.jirsak.org:/var/web/wud.cz/beta.2020'
+    args "$buildDir/"
+    args 'filip@barbucha.jirsak.org:/var/web/wud.cz/beta.2020/'
 }
