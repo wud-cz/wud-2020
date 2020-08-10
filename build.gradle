@@ -29,7 +29,7 @@ task script(type: Copy, group: 'build') {
 
 task style(group: 'build', dependsOn: 'compileSass')
 
-task build(group: 'build', dependsOn: [html, image, style, script])
+task build(group: 'build', dependsOn: [html, image, style, 'script'])
 
 task publish(type: Exec, group: 'publish', dependsOn: build) {
     executable 'pscp'
