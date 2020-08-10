@@ -574,7 +574,10 @@ section {
     }
 
     .e-mail {
-      margin-top: 24px;
+      margin-bottom: 24px;
+      @include for-desktop-up {
+        margin-bottom: 48px;
+      }
 
       a {
         text-decoration: underline;
