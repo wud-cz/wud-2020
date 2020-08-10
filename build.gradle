@@ -22,9 +22,14 @@ task image(type: Copy, group: 'build') {
     into "$buildDir/image"
 }
 
+task script(type: Copy, group: 'build') {
+    from "$projectDir/src/main/script"
+    into "$buildDir/script"
+}
+
 task style(group: 'build', dependsOn: 'compileSass')
 
-task build(group: 'build', dependsOn: [html, image, style])
+task build(group: 'build', dependsOn: [html, image, style, script])
 
 task publish(type: Exec, group: 'publish', dependsOn: build) {
     executable 'pscp'

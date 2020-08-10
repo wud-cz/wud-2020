@@ -6,6 +6,7 @@
     <title>World Usability Day 2020</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/style/main.css"/>
+    <script defer src="/script/menu.js"></script>
 </head>
 <body>
 <div class="main">
@@ -13,9 +14,9 @@
         <nav>
             <ul>
                 <li><a href="#about">Co je WUD</a></li>
-                <li><a href="#call-for-papers">Máte co říct o AI?</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-                <li><a href="#contact" class="button">Mám zájem</a></li>
+                <li><a href="#call-for-papers" id="menu-cfp">Máte co říct o AI?</a></li>
+                <li><a href="#contact" id="menu-contact">Kontakt</a></li>
+                <li><a href="#contact" id="menu-contact-me" class="button">Mám zájem</a></li>
             </ul>
         </nav>
     </header>
@@ -58,7 +59,7 @@
                     svůj e-mail a my se vám brzy ozveme.</p>
                 <form>
                     <div class="inputs">
-                        <input type="email" name="e-mail" placeholder="Váš e-mail"/>
+                        <input type="email" name="e-mail"  id="cfp-email" placeholder="Váš e-mail"/>
                         <textarea cols="30" rows="4" placeholder="Chcete nám rovnou něco vzkázat?"></textarea>
                     </div>
                     <div class="buttons">
@@ -152,11 +153,11 @@
                 </a>
             </div>
         </div>
-        <div class="milk-glass contact-form">
+        <div class="milk-glass contact-form" id="contact-form">
             <h4>Ať vám nic neunikne</h4>
             <p>Chcete dostat zprávu, až začneme nabízet vstupenky? Napište nám svůj e-mail:</p>
             <form>
-                <input type="email" name="e-mail" placeholder="Váš e-mail"/>
+                <input type="email" name="e-mail" id="contact-me-email" placeholder="Váš e-mail"/>
                 <button>Dejte mi vědět</button>
             </form>
         </div>
