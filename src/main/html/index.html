@@ -6,6 +6,10 @@
     <title>World Usability Day 2020</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/style/main.css"/>
+    <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--    <script defer src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="/script/form.js"></script>
     <script defer src="/script/menu.js"></script>
 </head>
 <body>
@@ -57,13 +61,14 @@
                 <p>Žijete umělou inteligencí a máte k tématu co říct? Máte tip, co bychom na konferenci o AI pro UX designery určetě neměli opo­me­nout? Dejte
                     nám
                     svůj e-mail a my se vám brzy ozveme.</p>
-                <form>
+                <form id="form-speaker" @submit.prevent="submit">
                     <div class="inputs">
-                        <input type="email" name="e-mail"  id="cfp-email" placeholder="Váš e-mail"/>
-                        <textarea cols="30" rows="4" placeholder="Chcete nám rovnou něco vzkázat?"></textarea>
+                        <div v-if="error != null" class="error" v-html="error"></div>
+                        <input type="email" name="e-mail"  id="cfp-email" v-model="form.email" placeholder="Váš e-mail"/>
+                        <textarea cols="30" rows="4" v-model="form.text" placeholder="Chcete nám rovnou něco vzkázat?"></textarea>
                     </div>
                     <div class="buttons">
-                        <button>Ozvěte se mi</button>
+                        <button type="submit" v-html="label">Ozvěte se mi</button>
                     </div>
                 </form>
             </div>
@@ -163,9 +168,10 @@
         <div class="milk-glass contact-form" id="contact-form">
             <h4>Ať vám nic neunikne</h4>
             <p>Chcete dostat zprávu, až začneme nabízet vstupenky? Napište nám svůj e-mail:</p>
-            <form>
-                <input type="email" name="e-mail" id="contact-me-email" placeholder="Váš e-mail"/>
-                <button>Dejte mi vědět</button>
+            <form id="form-zajemce" @submit.prevent="submit">
+                <div v-if="error != null" class="error" v-html="error"></div>
+                <input type="email" name="e-mail" id="contact-me-email" v-model="form.email" placeholder="Váš e-mail"/>
+                <button type="submit" v-html="label">Dejte mi vědět</button>
             </form>
         </div>
     </section>

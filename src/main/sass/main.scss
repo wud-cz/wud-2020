@@ -196,8 +196,9 @@ button {
     margin: 0 21px;
     width: auto;
   }
-  @include for-desktop-up {
-    padding: 14px 46px;
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -376,6 +377,11 @@ section {
       margin-top: 8px;
       @include for-tablet-up {
         align-self: flex-end;
+        flex-grow: 1;
+
+        > button {
+          width: 100%;
+        }
       }
     }
   }
@@ -587,6 +593,12 @@ section {
 
   .contact-form {
     padding: 40px;
+
+    button {
+      @include for-desktop-up {
+        width: 220px;
+      }
+    }
   }
 }
 
@@ -628,5 +640,20 @@ footer {
   }
   to {
     box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.5);
+  }
+}
+
+form .error {
+  color: orangered;
+  font-weight: bold;
+  margin: 8px 0;
+
+  a {
+    color: orangered;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

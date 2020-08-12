@@ -1,0 +1,18 @@
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+	<style>
+		#circle {
+		transform-origin: center;
+		animation: rotate 2s infinite;
+		}
+		@keyframes rotate {
+		0% {
+		transform: rotate(0deg);
+		}
+		100% {
+		transform: rotate(360deg);
+		}
+		}
+	</style>
+
+	<path id="circle" d="M 12,2 A 12, 12 0 0 0 2, 12 M 12,22 A 12,12 0 0 0 22,12"  stroke="#0b132b" stroke-width="4" fill="none" />
+</svg>
