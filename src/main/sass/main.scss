@@ -332,11 +332,21 @@ section {
   }
 }
 
-#call-for-papers {
+#proc {
+  @include for-desktop-up {
+    height: 715px;
+    padding: 110px 0 130px 0;
+    background: 37px bottom url('/image/aside/proc.svg') no-repeat,
+    720px 30px url('/image/wud-2019.jpg') no-repeat,
+    25px 0 / 700px url('/image/background/tema.svg') no-repeat;
+  }
+}
+
+#kdy-kde {
   @include for-desktop-up {
     padding-top: 90px;
-    background: right 37px bottom url('/image/aside/call-for-papers.svg') no-repeat,
-    150px 0 / 1300px url('/image/background/call-for-papers.svg') no-repeat;
+    background: right 37px bottom url('/image/aside/kdy-kde.svg') no-repeat,
+    150px 0 / 1300px url('/image/background/kdy-kde.svg') no-repeat;
   }
 
   > .milk-glass {
@@ -384,38 +394,6 @@ section {
         }
       }
     }
-  }
-}
-
-#themes {
-  @include for-desktop-up {
-    background: right 37px bottom url('/image/aside/themes.svg') no-repeat;
-  }
-
-  .theme-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 60px;
-    grid-row-gap: 30px;
-  }
-
-  .content {
-    margin-top: 60px;
-
-    & > div {
-      padding: 40px;
-    }
-  }
-}
-
-#wud-2019 {
-  @include for-desktop-up {
-    height: 715px;
-    padding: 110px 0 130px 0;
-    background: 37px bottom url('/image/aside/wud-2019.svg') no-repeat,
-    720px 30px url('/image/wud-2019.jpg') no-repeat,
-    25px 0 / 700px url('/image/background/2019.svg') no-repeat;
   }
 }
 

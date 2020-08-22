@@ -11,7 +11,7 @@ var svg = {
 var RE_MAIL = /(?:[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]+\.)*[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]+@(?:[\u0000-\u0019\u0021-\uFFFF]+\.)*[\u0000-\u0019\u0021-\uFFFF]+/
 
 var formZajemce = new Vue({
-    el: '#form-zajemce',
+    el: '.form-zajemce',
     created: function () {
         this.form.hostname = window.location.hostname
     },
@@ -38,40 +38,6 @@ var formZajemce = new Vue({
                 .catch(function (error) {
                     that.label = 'Dejte mi vědět';
                     that.error = "Je nám líto, e-mail se nepodařilo uložit. Raději nás kontaktujte na <a href='mailto:info@wud.cz'>info@wud.cz</a>. Děkujeme."
-                });
-        }
-    }
-})
-
-var formSpeaker = new Vue({
-    el: '#form-speaker',
-    created: function () {
-        this.form.hostname = window.location.hostname
-    },
-    data: {
-        form: {
-            email: '',
-            text: '',
-            hostname: null
-        },
-        label: 'Ozvěte se mi',
-        error: null
-    },
-    methods: {
-        submit: function () {
-            var that = this;
-            if (!RE_MAIL.test(this.form.email)) {
-                that.error = "Zadejte prosím platný e-mail."
-                return;
-            }
-            that.label = svg.sending + ' Ozvěte se mi';
-            db.post('/speaker', this.form)
-                .then(function (response) {
-                    that.label = svg.done + ' Ozveme se';
-                })
-                .catch(function (error) {
-                    that.label = 'Ozvěte se mi';
-                    that.error = "Je nám líto, údaje se nepodařilo odeslat. Raději nás kontaktujte na <a href='mailto:info@wud.cz'>info@wud.cz</a>. Děkujeme."
                 });
         }
     }

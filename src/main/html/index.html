@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/style/main.css"/>
     <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<!--    <script defer src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <!--    <script defer src="https://cdn.jsdelivr.net/npm/vue"></script>-->
     <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="/script/form.js"></script>
     <script defer src="/script/menu.js"></script>
@@ -17,8 +17,9 @@
     <header>
         <nav>
             <ul>
+                <li><a href="#proc">Proč přijít</a></li>
+                <li><a href="#kdy-kde">Kdy a kde</a></li>
                 <li><a href="#about">Co je WUD</a></li>
-                <li><a href="#call-for-papers" id="menu-cfp">Máte co říct o AI?</a></li>
                 <li><a href="#contact" id="menu-contact">Kontakt</a></li>
                 <li><a href="#contact" id="menu-contact-me" class="button">Mám zájem</a></li>
             </ul>
@@ -35,53 +36,48 @@
                 <h1 class="title">World Usability Day 2020</h1>
                 <h4 class="location-md">Praha, listopad 2020</h4>
                 <h1>Umělá inteligence ve službách člověka</h1>
-                <p>Pro nás, UX designery, je umělá inteligence tak trochu magie. Někdy dobrá, když nám pomůže s problémem, se kterým si nevíme rady.
-                    A někdy zlá, pokud máme pocit, že nad ní ztrácíme moc. Umělá inteligence je ale jen dalším ze služebníků, které jsme si vytvořili; další
-                    krok
-                    ve vývoji techniky.</p>
-                <p>Jedním z cílů UX designu je pochopit nové technologie a přizpůsobit je tak, aby dobře sloužily lidem. Pojďme se tedy
-                    letos podívat na zoubek umělé inteligenci. Poodhalme její tajemství. Zjistěme, jak může sloužit nám, UXákům. Naučme ji, jak může lépe
-                    sloužit lidem.</p>
+                <p><strong>UX a umělá inteligence (AI) prý nemají nic společného… Opravdu?</strong> Přijďte najít společnou řeč mezi umělou inteligencí a
+                    designem zaměřeným na
+                    člověka na <strong>prvním oficiálním setkání UX a AI v Česku</strong>.</p>
+            </div>
+        </section>
+
+        <section id="proc">
+            <div class="milk-glass">
+                <h2>Proč jít na letošní WUD</h2>
+                <ul>
+                    <li>Research&amp;develop specialisté se podělí o tipy z praxe.</li>
+                    <li>AI vědci vysěvtlí, jak to celé funguje.</li>
+                    <li>Nahlédnete do produktů a služeb poháněných umělou inteligencí.</li>
+                    <li>Inspirujete se, kdy o AI začít přemýšlet přímo u vás ve firmě.</li>
+                    <li>Strávíte den s UX designery z jiných firem, kteří řeší stejné problémy, jaké řešíte i vy.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="kdy-kde">
+            <div class="milk-glass">
+                <h2>Kdy a kde</h2>
+                <p>Celodenní off-line akci plnou networkingu, workshopů a přednášek, chystáme na listopad 2020 v Praze. Snad COVID dovolí. Pokud by se situace změnila
+                    a nebylo by možné udělat bezpečnou akci na místě, peníze za vstupné vám vrátíme.</p>
+                <p>Chcete být mezi prvními, kdo bude znát čas a místo? <strong>Nechte nám svůj e-mail.</strong> Napíšeme vám, jakmile začne prodej vstupenek.</p>
+                <form class="form-zajemce" @submit.prevent="submit">
+                    <div v-if="error != null" class="error" v-html="error"></div>
+                    <input type="email" name="e-mail" v-model="form.email" placeholder="Váš e-mail"/>
+                    <button type="submit" v-html="label">Dejte mi vědět</button>
+                </form>
+
             </div>
         </section>
 
         <section id="about">
             <div class="milk-glass">
                 <h2>Co je World Usability Day?</h2>
-                <p>Každý rok pořádají UX designeři po celém světě druhý čtvrtek v listopadu akce, které propojují různé komunity a mají za cíl zlepšit
-                    použitelnost našeho světa. Už šestnáct let se k této tradici připojujeme i v ČR. Chceme na jeden den vytrhnout UX designery od jejich
-                    obrazovek a polo­průhledných zrcadel a dát jim okusit jiný svět. WUD není konference s přesným rozpisem přednášek a networkingových pauz.
-                    WUD je událost. Událost naplněná tématem, lidmi, prací, zkušenostmi, nápady, příklady.</p>
-            </div>
-        </section>
-
-        <section id="call-for-papers">
-            <div class="milk-glass">
-                <h2>Pojďte s námi mluvit o AI</h2>
-                <p>Žijete umělou inteligencí a máte k tématu co říct? Máte tip, co bychom na konferenci o AI pro UX designery určetě neměli opo­me­nout? Dejte
-                    nám
-                    svůj e-mail a my se vám brzy ozveme.</p>
-                <form id="form-speaker" @submit.prevent="submit">
-                    <div class="inputs">
-                        <div v-if="error != null" class="error" v-html="error"></div>
-                        <input type="email" name="e-mail"  id="cfp-email" v-model="form.email" placeholder="Váš e-mail"/>
-                        <textarea cols="30" rows="4" v-model="form.text" placeholder="Chcete nám rovnou něco vzkázat?"></textarea>
-                    </div>
-                    <div class="buttons">
-                        <button type="submit" v-html="label">Ozvěte se mi</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <section id="wud-2019">
-            <div class="milk-glass">
-                <h2>Jak se povedl loňský ročník?</h2>
-                <p>Tématem WUD 2019 byla udržitelnost. Užili jsme si den plný přednášek a workshopů se zapálenými odborníky z praxe.</p>
-                <p>Dopoledne bylo věnováno přednáškám o cirkulární ekonomice a udržitelnosti. Odpo­ledne jsme se rozdělili na tři work­shopy. Na prvním
-                    workshopu vymýšleli, jak znovu použít to, co někdo považuje za odpad. Druhá skupinka řešila, jak vést organizaci k udrži­tel­nosti. Poslední
-                    workshop se věnoval nedo­statku vody v naší krajině.</p>
-                <div class="md-center"><a href="https:///2019.wud.cz" class="button">Přejít na WUD 2019</a></div>
+                <p>Každý rok v listopadu pořádají UX designeři po celém světě akce, které propojují různé komunity. Cílem těchto setkání je zlepšit
+                    použitelnost našeho světa.</p>
+                <p>Už šestnáct let se k této tradici připojujeme i v ČR. Chceme na jeden den vytrhnout UX designery od jejich obrazovek a dát jim okusit jiný
+                    svět. WUD je událost naplněná tématy, lidmi, prací a zkušenostmi.</p>
+                <p>Chcete vědět, jak takový den vypadá? Podívejte se na <a href="https://2019-wud.cz/">loňský ročník</a>, jehož tématem byla udržitelnost.</p>
             </div>
         </section>
 
@@ -116,14 +112,14 @@
                     </figcaption>
                 </figure>
                 <figure style="order: 6">
-                    <img  src="/image/people/katka.jpg" srcset="/image/people/katka-sm.jpg 80w, /image/people/katka-2x.jpg 320w" alt="Kateřina Pěkná"/>
+                    <img src="/image/people/katka.jpg" srcset="/image/people/katka-sm.jpg 80w, /image/people/katka-2x.jpg 320w" alt="Kateřina Pěkná"/>
                     <figcaption>
                         <h4>Kateřina Pěkná</h4>
                         <p>UX designerka, OKsystem</p>
                     </figcaption>
                 </figure>
                 <figure style="order: 7">
-                    <img  src="/image/people/martina.jpg" srcset="/image/people/martina-sm.jpg 80w, /image/people/martina-2x.jpg 320w" alt="Martina Pokorná"/>
+                    <img src="/image/people/martina.jpg" srcset="/image/people/martina-sm.jpg 80w, /image/people/martina-2x.jpg 320w" alt="Martina Pokorná"/>
                     <figcaption>
                         <h4>Martina Pokorná</h4>
                         <p>UX výzkumnice, MONETA Money Bank</p>
@@ -167,8 +163,8 @@
         </div>
         <div class="milk-glass contact-form" id="contact-form">
             <h4>Ať vám nic neunikne</h4>
-            <p>Chcete dostat zprávu, až začneme nabízet vstupenky? Napište nám svůj e-mail:</p>
-            <form id="form-zajemce" @submit.prevent="submit">
+            <p>Nechte nám svůj e-mail a my vám napíšeme, jakmile začne prodej vstupenek.</p>
+            <form id="form-zajemce" class="form-zajemce" @submit.prevent="submit">
                 <div v-if="error != null" class="error" v-html="error"></div>
                 <input type="email" name="e-mail" id="contact-me-email" v-model="form.email" placeholder="Váš e-mail"/>
                 <button type="submit" v-html="label">Dejte mi vědět</button>

@@ -1,9 +1,3 @@
-document.getElementById('menu-cfp').addEventListener('click', function (event) {
-    window.setTimeout(function() {
-        document.getElementById('cfp-email').focus();
-    }, 100)
-})
-
 document.getElementById('menu-contact').addEventListener('click', function (event) {
     window.setTimeout(function() {
         document.getElementById('contact').classList.add('glow');

@@ -17,6 +17,6 @@
 		stroke-opacity: 0.2;
 		}
 	</style>
-	<line x1="10" x2="10" y1="0" y2="130" />
-	<text x="10" y="213" transform="rotate(270, 10, 213)">WUD 2019</text>
+	<line x1="10" x2="10" y1="0" y2="120"/>
+	<text x="10" y="213" transform="rotate(270, 10, 213)">Kdy a kde</text>
 </svg>
