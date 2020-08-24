@@ -5,10 +5,16 @@
 			<stop offset="1" stop-color="#283BFD" stop-opacity="0"/>
 		</radialGradient>
 	</defs>
-	<circle cx=" 22" cy="169" r="19.5" fill="url(#point)" transform="translate(19.5 19.5)" />
-	<circle cx="271" cy="102" r="14.5" fill="url(#point)" transform="translate(14.5 14.5)" />
-	<circle cx="210" cy="203" r="19.5" fill="url(#point)" transform="translate(19.5 19.5)" />
-	<circle cx="505" cy="199" r="10.0" fill="url(#point)" transform="translate(10.0 10.0)" />
-	<circle cx=" 19" cy="404" r="19.5" fill="url(#point)" transform="translate(19.5 19.5)" />
-	<circle cx="285" cy="365" r="14.5" fill="url(#point)" transform="translate(14.5 14.5)" />
+	<circle cx=" 22" cy="169" r="19.5" id="c1" fill="url(#point)" transform="translate(19.5 19.5)" />
+	<circle cx="271" cy="102" r="14.5" id="c2" fill="url(#point)" transform="translate(14.5 14.5)" />
+	<circle cx="210" cy="203" r="19.5" id="c3" fill="url(#point)" transform="translate(19.5 19.5)" />
+	<circle cx="505" cy="199" r="10.0" id="c4" fill="url(#point)" transform="translate(10.0 10.0)" />
+	<circle cx=" 19" cy="404" r="19.5" id="c5" fill="url(#point)" transform="translate(19.5 19.5)" />
+	<circle cx="285" cy="365" r="14.5" id="c6" fill="url(#point)" transform="translate(14.5 14.5)" />
+	<animate href="#c1" attributeName="r" values="10; 20; 10" dur="2s" repeatDur="indefinite"/>
+	<animate href="#c2" attributeName="r" values="5; 15; 5" dur="3s" repeatDur="indefinite"/>
+	<animate href="#c3" attributeName="r" values="10; 20" dur="4s" repeatDur="indefinite"/>
+	<animate href="#c4" attributeName="r" values="1; 5; 1" dur="1s" repeatDur="indefinite"/>
+	<animate href="#c5" attributeName="r" values="10; 20; 10" dur="2.5s" repeatDur="indefinite"/>
+	<animate href="#c6" attributeName="r" values="8; 16" dur="1.5s" repeatDur="indefinite"/>
 </svg>
