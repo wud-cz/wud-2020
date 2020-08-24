@@ -31,9 +31,38 @@ task style(group: 'build', dependsOn: 'compileSass')
 
 task build(group: 'build', dependsOn: [html, image, style, 'script'])
 
-task publish(type: Exec, group: 'publish', dependsOn: build) {
-    executable 'pscp'
-    args '-r'
-    args "$buildDir/"
-    args 'filip@barbucha.jirsak.org:/var/web/wud.cz/beta.2020/'
+task publish(group: 'publish', dependsOn: build) {
+    doLast {
+        def timestamp = Instant.now().epochSecond
+        def server = 'filip@barbucha.jirsak.org'
+        def targetDir = "/var/web/wud.cz/2020.$timestamp/"
+
+        exec {
+            executable 'plink'
+            args server
+            args 'mkdir'
+            args targetDir
+        }
+
+        exec {
+            executable 'pscp'
+            args '-batch'
+            args '-r'
+            args '-p'
+            args "$buildDir/"
+            args "$server:$targetDir"
+        }
+
+        exec {
+            executable 'plink'
+            args server
+            args 'cd'
+            args '/var/web/wud.cz/'
+            args '&&'
+            args 'ln'
+            args '-sbTf'
+            args "2020.$timestamp/"
+            args '2020'
+        }
+    }
 }
