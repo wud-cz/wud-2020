@@ -60,10 +60,12 @@
                 <p>Celodenní offline akci plnou networkingu, workshopů a přednášek, chystáme na listopad 2020 v Praze. Snad COVID dovolí. Pokud by se situace změnila
                     a nebylo by možné udělat bezpečnou akci na místě, peníze za vstupné vám vrátíme.</p>
                 <p>Chcete být mezi prvními, kdo bude znát čas a místo? <strong>Nechte nám svůj e-mail.</strong> Napíšeme vám, jakmile začne prodej vstupenek.</p>
-                <form class="form-zajemce" @submit.prevent="submit">
+                <form id="form-kdy-kde" class="contact-form" @submit.prevent="submit">
                     <div v-if="error != null" class="error" v-html="error"></div>
-                    <input type="email" name="e-mail" v-model="form.email" placeholder="Váš e-mail"/>
-                    <button type="submit" v-html="label">Dejte mi vědět</button>
+                    <div class="form">
+                        <input type="email" name="e-mail" v-model="form.email" placeholder="Váš e-mail"/>
+                        <button type="submit" v-html="label">Dejte mi vědět</button>
+                    </div>
                 </form>
 
             </div>
@@ -163,7 +165,7 @@
         <div class="milk-glass contact-form" id="contact-form">
             <h4>Ať vám nic neunikne</h4>
             <p>Nechte nám svůj e-mail a my vám napíšeme, jakmile začne prodej vstupenek.</p>
-            <form id="form-zajemce" class="form-zajemce" @submit.prevent="submit">
+            <form id="form-zajemce" class="contact-form" @submit.prevent="submit">
                 <div v-if="error != null" class="error" v-html="error"></div>
                 <input type="email" name="e-mail" id="contact-me-email" v-model="form.email" placeholder="Váš e-mail"/>
                 <button type="submit" v-html="label">Dejte mi vědět</button>

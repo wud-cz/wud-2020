@@ -141,6 +141,10 @@ p {
   }
 }
 
+li {
+  margin-bottom: 1ex;
+}
+
 .milk-glass, #themes > .content > div {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(30px);
@@ -222,7 +226,7 @@ form {
     }
 
     @include for-tablet-up {
-      width: 405px;
+      width: auto;
     }
 
     &:focus {
@@ -368,21 +372,21 @@ section {
   form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: start;
     @include for-tablet-up {
       flex-direction: row;
     }
 
-    > .inputs {
-      display: flex;
-      flex-direction: column;
-
+    input {
       @include for-tablet-up {
         width: 405px;
-      }
-
-      textarea {
-        margin-top: 8px;
       }
     }
 
@@ -428,6 +432,7 @@ section {
     @include for-desktop-up {
       text-align: left;
     }
+
     h3 {
       @include for-tablet-up {
         margin-bottom: 24px;
@@ -522,6 +527,21 @@ section {
     text-decoration: none;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include for-tablet-up {
+      flex-direction: row;
+    }
+    input {
+      @include for-desktop-up {
+        width: 320px;
+      }
+    }
+
+  }
+
   .social-media {
     flex-grow: 1;
 
@@ -561,14 +581,12 @@ section {
       }
     }
   }
+}
 
-  .contact-form {
-    padding: 40px;
-
-    button {
-      @include for-desktop-up {
-        width: 220px;
-      }
+.contact-form {
+  button {
+    @include for-desktop-up {
+      width: 220px;
     }
   }
 }

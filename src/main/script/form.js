@@ -1,17 +1,16 @@
 var db = axios.create({
     baseURL: 'https://europe-west1-wud-2020-api.cloudfunctions.net/',
-    timeout: 3000
+    timeout: 10000
 });
 
 var svg = {
     sending: '<svg viewBox="0 0 24 24" width="18"><style>#circle {transform-origin: center;animation: rotate 2s infinite;} @keyframes rotate {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}</style><path id="circle" d="M 12,2 A 12, 12 0 0 0 2, 12 M 12,22 A 12,12 0 0 0 22,12"  stroke="#0b132b" stroke-width="4" fill="none" /></svg>',
-    done: '<svg viewBox="0 0 24 24" width="24"><path d="M 2,12 L 8,22 L 22,2"  stroke="#0b132b" stroke-width="4" fill="none" /></svg>'
+    done: '<svg viewBox="0 0 24 24" width="20"><path d="M 2,12 L 8,22 L 22,2"  stroke="#0b132b" stroke-width="4" fill="none" /></svg>'
 }
 
 var RE_MAIL = /(?:[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]+\.)*[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]+@(?:[\u0000-\u0019\u0021-\uFFFF]+\.)*[\u0000-\u0019\u0021-\uFFFF]+/
 
-var formZajemce = new Vue({
-    el: '.form-zajemce',
+var formHandler = {
     created: function () {
         this.form.hostname = window.location.hostname
     },
@@ -41,4 +40,8 @@ var formZajemce = new Vue({
                 });
         }
     }
-})
+}
+
+
+new Vue(formHandler).$mount('#form-kdy-kde')
+new Vue(formHandler).$mount('#form-zajemce')
