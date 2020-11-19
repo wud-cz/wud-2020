@@ -1,0 +1,31 @@
+@import "common";
+
+body {
+  background: center top / 100vw 100vh linear-gradient(174.93deg, #3A506B 2.1%, rgba(11, 19, 43, 0) 89.02%) no-repeat,
+  linear-gradient($color-dark-blue, $color-dark-blue);
+}
+
+.main {
+  min-height: 100vh;
+
+  @include for-desktop-up {
+    background: url('/image/background/top.svg') no-repeat;
+  }
+}
+
+.info {
+  font-size: 175%;
+  margin-top: 3em;
+}
+
+.pauza {
+  position: absolute;
+  bottom: 2em;
+  font-size: 750%;
+  text-align: center;
+  cursor: pointer;
+}
+
+#pauza {
+  font-weight: bold;
+}

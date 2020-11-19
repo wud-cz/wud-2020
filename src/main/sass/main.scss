@@ -1,35 +1,4 @@
-$color-blue: #0000D6;
-$color-dark-blue: #0B132B;
-
-@mixin for-desktop-up {
-  @media only screen and (min-width: 1440px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-up {
-  @media only screen and (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-only {
-  @media only screen and (min-width: 768px) and (max-width: 1439px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-down {
-  @media only screen and (max-width: 1439px) {
-    @content;
-  }
-}
-
-@mixin for-mobile-only {
-  @media only screen and (max-width: 767px) {
-    @content;
-  }
-}
+@import "common";
 
 *,
 *:before,
@@ -119,12 +88,14 @@ h4 {
   }
 }
 
-h1.title {
-  font-size: 24px;
-  font-weight: 300;
-  @include for-tablet-up {
-    font-size: 48px;
-    margin-bottom: 8px;
+h1, h2 {
+  &.title {
+    font-size: 24px;
+    font-weight: 300;
+    @include for-tablet-up {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
   }
 }
 
